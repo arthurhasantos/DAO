@@ -1,11 +1,11 @@
 @echo off
 echo ========================================
-echo   Compilando Projeto DAO
+echo   Inicializando Projeto DAO
 echo ========================================
 echo.
 
 REM Compila o projeto
-echo Compilando o projeto...
+echo [1/2] Compilando o projeto...
 call mvn clean package -q
 
 if %ERRORLEVEL% NEQ 0 (
@@ -14,13 +14,18 @@ if %ERRORLEVEL% NEQ 0 (
     exit /b 1
 )
 
+echo [2/2] Criando tabela CLIENTE...
+echo.
+
+REM Executa o Main para criar a tabela
+java -cp "target/classes;%USERPROFILE%\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar" com.exemplo.Main
+
 echo.
 echo ========================================
-echo   Compila��o conclu�da com sucesso!
+echo   Tudo pronto!
 echo ========================================
 echo.
-echo Projeto compilado e pronto para uso!
-echo Para testar, abra o console H2:
+echo Para visualizar o banco:
 echo   abrir-console-h2.bat
 echo.
 pause

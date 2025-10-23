@@ -15,8 +15,9 @@ src/main/java/com/exemplo/
 │   ├── ClienteDAO.java           # Interface específica para Cliente
 │   └── impl/
 │       └── ClienteDAOImpl.java   # Implementação do ClienteDAO
-└── database/
-    └── DatabaseConnection.java   # Gerenciamento de conexão com H2
+├── database/
+│   └── DatabaseConnection.java   # Gerenciamento de conexão com H2
+└── Main.java                     # Inicializa o banco de dados
 ```
 
 ## 🚀 Funcionalidades
@@ -36,19 +37,29 @@ src/main/java/com/exemplo/
 - Java 11 ou superior
 - Maven 3.6 ou superior
 
-## 🔧 Como Executar
+**Para instalar em outro PC**, veja o guia completo: **[INSTALACAO.md](INSTALACAO.md)**
 
-### Passo 1: Compilar o Projeto
+**Verificar se seu PC está pronto:**
 ```bash
-# Windows
-executar.bat
-
-# Ou com Maven diretamente
-mvn clean package
+verificar-requisitos.bat
 ```
 
-### Passo 2: Usar as Classes DAO
-Integre as classes DAO no seu próprio código ou use o console H2 para testar.
+## 🔧 Como Executar
+
+### Passo 1: Executar o Projeto
+```bash
+executar.bat
+```
+Isso compila o projeto **E** cria a tabela CLIENTE automaticamente!
+
+### Passo 2: Visualizar o Banco
+```bash
+abrir-console-h2.bat
+```
+Abre o console web para visualizar e testar o banco de dados.
+
+### Passo 3: Usar as Classes DAO
+Integre as classes DAO no seu próprio código.
 
 ## 🌐 Console Web H2 Database
 
@@ -160,8 +171,17 @@ Este projeto demonstra:
 Este projeto inclui documentação completa:
 
 - **[README.md](README.md)** - Este arquivo, visão geral do projeto
+- **[INSTALACAO.md](INSTALACAO.md)** - Guia de instalação em outro PC
+  - Requisitos do sistema
+  - Passo a passo completo
+  - Checklist de instalação
+- **[PROBLEMAS_COMUNS.md](PROBLEMAS_COMUNS.md)** - 🆕 Soluções para erros frequentes
+  - 10 problemas mais comuns
+  - Soluções passo a passo
+  - Checklist de diagnóstico
+  - Dicas preventivas
 - **[COMO_USAR.md](COMO_USAR.md)** - Guia prático com exemplos de código Java
-- **[TESTES_SQL.md](TESTES_SQL.md)** - 🆕 Exemplos de comandos SQL para testar no Console H2
+- **[TESTES_SQL.md](TESTES_SQL.md)** - Exemplos de comandos SQL para testar no Console H2
   - INSERT, UPDATE, DELETE, SELECT
   - Consultas avançadas
   - Transações e validações
@@ -170,8 +190,10 @@ Este projeto inclui documentação completa:
 
 ## 📦 Arquivos Úteis
 
-- `executar.bat` / `executar.sh` - Compila e executa o projeto
-- `abrir-console-h2.bat` / `abrir-console-h2.sh` - Abre o console web do H2
+- `verificar-requisitos.bat` - Verifica se Java e Maven estão instalados
+- `diagnostico.bat` - Diagnóstico completo do projeto
+- `executar.bat` - Compila o projeto e cria a tabela CLIENTE
+- `abrir-console-h2.bat` - Abre o console web do H2
 - `pom.xml` - Configuração Maven com dependências
 - `.gitignore` - Ignora arquivos desnecessários no Git
 

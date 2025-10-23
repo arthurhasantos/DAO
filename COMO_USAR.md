@@ -2,11 +2,11 @@
 
 ## 🚀 Execução Simples
 
-### 1. Compilar o projeto
+### 1. Executar o projeto
 ```bash
 executar.bat
 ```
-Isso compila o projeto e deixa tudo pronto para usar.
+Isso compila o projeto **E** cria a tabela CLIENTE automaticamente!
 
 ### 2. Abrir o console web do banco de dados
 ```bash
@@ -71,7 +71,8 @@ src/main/java/com/exemplo/
 ├── model/Cliente.java           → Entidade (dados do cliente)
 ├── dao/ClienteDAO.java          → Interface (métodos disponíveis)
 ├── dao/impl/ClienteDAOImpl.java → Implementação (código JDBC)
-└── database/DatabaseConnection  → Conexão com H2
+├── database/DatabaseConnection  → Conexão com H2
+└── Main.java                    → Inicializa o banco de dados
 ```
 
 ---
@@ -80,8 +81,10 @@ src/main/java/com/exemplo/
 
 | Arquivo | Função |
 |---------|--------|
-| `executar.bat` | Compila o projeto |
+| `executar.bat` | Compila o projeto e cria a tabela CLIENTE automaticamente |
 | `abrir-console-h2.bat` | Abre interface web do banco de dados |
+| `verificar-requisitos.bat` | Verifica se Java e Maven estão instalados |
+| `diagnostico.bat` | Diagnóstico completo em caso de problemas |
 | `TESTES_SQL.md` | Lista de comandos SQL prontos para copiar |
 
 ---
@@ -151,9 +154,9 @@ rmdir /s data
 
 ## 🎓 Próximos Passos
 
-1. Execute `executar.bat` para compilar o projeto
-2. Abra `abrir-console-h2.bat` para visualizar o banco
-3. Copie comandos SQL do `TESTES_SQL.md` e teste no console
+1. Execute `executar.bat` (compila e cria a tabela)
+2. Abra `abrir-console-h2.bat` (visualiza o banco)
+3. Teste com comandos SQL do `TESTES_SQL.md`
 4. Use as classes DAO no seu próprio código
 5. Adicione novos campos ou crie novas entidades
 
